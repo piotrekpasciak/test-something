@@ -1,0 +1,21 @@
+openapi: 3.0.0
+info:
+  title: Payments API
+  description: This is the API endpoint used for creating and persisting payment plans.
+  version: 25.0.0
+paths:
+  /v1/payment_options:
+    get:
+      operationId: fetchPaymentOptions
+      description: Fetches payment plan options for a given total value
+      parameters:
+        - in: query
+          required: true
+          name: plan_value_amount
+          schema:
+            type: string
+            example: "1000.0"
+          description: The plan value amount in decimal value
+      responses:
+        "200":
+          description: Everything OK

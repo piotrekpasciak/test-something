@@ -1,7 +1,8 @@
+name: Run Spectral on Pull Requests
+
 on:
-  - push
   - pull_request
-name: Spectral CI
+
 jobs:
   build:
     name: Run Spectral
@@ -9,7 +10,8 @@ jobs:
     steps:
       # Check out the repository
       - uses: actions/checkout@v2
+
       # Run Spectral
       - uses: stoplightio/spectral-action@latest
         with:
-          file_glob: './doc/api/payments.yaml'
+          file_glob: 'doc/api/failure_example.yaml'
